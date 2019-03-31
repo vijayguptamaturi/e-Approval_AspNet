@@ -1,0 +1,71 @@
+﻿body {
+	font-family: 'Lato', 'Arial', sans-serif;
+	background: #ddd url(../Images/BodyBg.png);
+	font-weight: 300;
+	font-size: 15px;
+	color: #333;
+	-webkit-font-smoothing: antialiased;
+	overflow-y: scroll;
+	overflow-x: hidden;
+    
+}
+
+
+.lnkButtons{
+    color:white;
+    text-decoration:none;
+}
+.lnkButtons:hover
+{
+    color:greenyellow;
+    text-decoration:none;
+}
+
+
+
+
+
+#templatemo_services {
+	clear: both;
+	float: left;
+	width: 900px;
+	height: 272px;
+	padding-left: 50px;
+	margin-bottom: 25px;
+}
+
+.service_box {
+	float: left;
+	width: 220px;
+	height: 460px;
+	padding: 10px 15px 10px 15px;
+	margin-right: 50px;
+    /*background: url(../Images/boxBG.png) repeat;*/
+}
+
+.service_box p{
+	padding-bottom: 5px;
+}
+
+.service_box img{
+	padding-bottom: 5px;
+}
+
+.more_button {
+	clear: both;
+	display: block;
+	width: 100px;
+	height: 50px;
+	margin: 0px;
+	padding: 2px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	color: #FFF;
+	background: #79b5f3;
+	border: 1px solid #FFF;
+}
+
+
+/*------------------------------------------------------------*/
+

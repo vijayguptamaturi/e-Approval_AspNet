@@ -1,0 +1,262 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="eApproval.Main" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link href="Css/LogoutMenu.css" rel="stylesheet" />
+
+    <link href="Css/Style.css" rel="stylesheet" />
+    <script src="Js/Jquery.js"></script>
+
+    <link href="Css/ControlStyles.css" rel="stylesheet" />
+
+    <style type="text/css">
+        .lblLogutButton {
+            color: white;
+            text-decoration: none;
+        }
+
+            .lblLogutButton:hover {
+                color: greenyellow;
+                text-decoration: none;
+            }
+
+
+        .MenuInnerLinkButtons {
+            width: auto;
+            min-width: 100px;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+   
+    </style>
+
+   <style type="text/css">
+
+        .modal {
+            position: fixed;
+            z-index: 999;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            background-color: Black;
+            filter: alpha(opacity=60);
+            opacity: 0.6;
+            -moz-opacity: 0.8;
+        }
+
+        .center {
+            z-index: 1000;
+            margin-top: 300px;
+            margin-left: 650px;
+            padding: 10px;
+            width: 80px;
+            background-color: White;
+            border-radius: 10px;
+            filter: alpha(opacity=100);
+            opacity: 1;
+            -moz-opacity: 1;
+        }
+
+            .center img {
+                height: 80px;
+                width: 80px;
+            }
+
+
+   </style>
+
+     <link runat="server" rel="shortcut icon" href="~/Images/E Logo.png" type="image/x-icon"/>
+
+
+</head>
+
+
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
+
+
+            <div style="height: 58px; width: 1350px; background-color: #0f4069;">
+                <table style="margin-left: 20px; margin-top: -2px;">
+
+                    <tr>
+                        <td>
+                            <asp:Image ID="ImgLogo" runat="server" ImageUrl="~/Images/E logo.png" Width="50px" Height="50px" />
+                        </td>
+                        <td style="margin-left: -10px; width: 600px;">
+                            <asp:Label runat="server" Text="- Approval" Font-Bold="true" ForeColor="WhiteSmoke" Height="30px" Font-Size="22px" Width="197px"></asp:Label>
+
+                        </td>
+
+
+                        <td>
+
+                            <%--  <section class="main">
+                        <div class="wrapper-demo" >
+                            <div id="dd" class="wrapper-dropdown-5" tabindex="1">
+                                John Doe
+					
+                                <ul class="dropdown">
+                                    <li><a href="#"><i class="icon-user"></i>Profile</a></li>
+                                    <li><a href="#"><i class="icon-cog"></i>Settings</a></li>
+                                    <li><a href="#"><i class="icon-remove"></i>Log out</a></li>
+                                </ul>
+                            </div>
+                            ​
+                        </div>
+                    </section>--%>
+
+                   
+
+                     
+
+                        </td>
+                        <%-- <td style="padding-left:300px;">
+
+                    <asp:Label ID="lblDeptName" runat="server" Font-Bold="true" Text="Deprtment Name"  Font-Size="15px" ForeColor="White"></asp:Label>
+                </td>--%>
+                    </tr>
+                </table>
+
+
+                <table style="margin-top: -40px; margin-left: 750px; text-align: right;">
+
+
+                    <tr>
+
+
+
+
+                        <td>
+
+                            <asp:Label ID="lblUserName" runat="server" Font-Bold="true" Width="500px" CssClass="lableName" Font-Size="15px" ForeColor="White"></asp:Label>
+                        </td>
+                        <td></td>
+                        <td style="width: 150px; padding-left: 530px;">
+                            <%--<asp:LinkButton ID="lblbtnLogout" runat="server" Font-Bold="true" Text="Log Out" Font-Size="18px" PostBackUrl="~/Portal/Index.aspx" CssClass="lblLogutButton"></asp:LinkButton>--%>
+
+                            <div class="pure-container" data-effect="pure-effect-slide">
+
+
+                                <input type="checkbox" id="pure-toggle-right" class="pure-toggle" data-toggle="right" />
+
+                                <label class="pure-toggle-label" for="pure-toggle-right" data-toggle-label="right"><span class="pure-toggle-icon"></span></label>
+
+
+                                <nav class="pure-drawer" style="width: 200px;" data-position="right">
+                                    <br />
+                                    <br />
+
+                                    <table style="margin-left: 30px; text-align: left;">
+                                        <tr>
+                                            <td>
+                                                <asp:LinkButton ID="lnkbtnProfile" runat="server"  CssClass="lblLogutButton" Font-Bold="true" Text="Profile" Font-Size="13px"></asp:LinkButton>
+                                            </td>
+                                        </tr>
+                                      
+                                        <tr>
+                                            <td>
+                                                <asp:LinkButton ID="lnkbtnSettings" runat="server" PostBackUrl="~/UserInterface/PasswordChange.aspx" CssClass="lblLogutButton" Font-Bold="true" Text="Settings" Font-Size="13px"></asp:LinkButton>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <asp:LinkButton ID="lnkbtnLogOut" runat="server" PostBackUrl="~/Portal/Index.aspx" CssClass="lblLogutButton" Font-Bold="true" Text="Log Out" Font-Size="13px"></asp:LinkButton>
+
+                                            </td>
+
+                                        </tr>
+
+
+                                    </table>
+
+                                </nav>
+
+
+                                <%--                       <label class="pure-overlay" for="pure-toggle-right" data-overlay="right"></label>--%>
+                            </div>
+
+
+                        </td>
+                        <td></td>
+
+
+                    </tr>
+
+                </table>
+
+
+
+
+            </div>
+
+
+
+            <div style="margin-top: 1px; padding-bottom: 50px;">
+
+
+                <ul id="menu">
+                    <li><a href="/Portal/Home.aspx">Home</a></li>
+                    <li>
+                        <a id="aMaster" runat="server" href="/Portal/Home.aspx">Master ￬</a>
+                        <ul class="hidden">
+                            <li><a href="/UserInterface/Master/UserProfile.aspx">User Master</a></li>
+                           <%-- <asp:LinkButton ID="lnkUserMaster" CssClass="MenuInnerLinkButtons" PostBackUrl="~/UserInterface/Master/UserProfile.aspx" Text="User Master" runat="server"></asp:LinkButton>--%>
+
+                            <%-- <li><a href="#">Views</a></li>--%>
+                        </ul>
+                    </li>
+                    <%--   <li>
+                        <a href="#">Portfolio ￬</a>
+                        <ul class="hidden">
+                            <li><a href="#">Photography</a></li>
+                            <li><a href="#">Web & User Interface Design</a></li>
+                            <li><a href="#">Illustration</a></li>
+                        </ul>
+                    </li>--%>
+
+                   <%-- <asp:LinkButton ID="lnkInititateRequest" CssClass="MenuLinkButtons" OnClick="lnkInititateRequest_Click" Text="Initiate" runat="server"></asp:LinkButton>--%>
+                     <li><a id="aInitiateRequest" runat="server" href="/UserInterface/InitiateRequest.aspx">Initiate</a></li>
+                    <li><a id="aApprovalList" runat="server" href="/UserInterface/ApprovalsList.aspx">Approvals</a></li>
+                    <li><a id="aViewsList" runat="server" href="/UserInterface/ViewsList.aspx">Views</a></li>
+
+                    <%--<asp:LinkButton ID="lnkApprovals" CssClass="MenuLinkButtons" OnClick="lnkApprovals_Click" Text="Approvals" runat="server"></asp:LinkButton>
+
+                    <asp:LinkButton ID="lnkViews" CssClass="MenuLinkButtons" OnClick="lnkViews_Click" Text="Views" runat="server"></asp:LinkButton>--%>
+
+                </ul>
+            </div>
+
+
+
+
+
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+
+            
+
+
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+         
+
+       
+
+    </form>
+</body>
+</html>
